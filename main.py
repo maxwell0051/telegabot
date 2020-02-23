@@ -101,8 +101,8 @@ def text1(message):
        bot.send_message(message.chat.id, random.choice(ctt.norm))
      elif message.text == '🔙Назад':
          markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-         cmd = types.KeyboardButton("Цитаты")
-         gms = types.KeyboardButton("Игры")
+         cmd = types.KeyboardButton("📜Цитаты")
+         gms = types.KeyboardButton("🎮Игры")
 
          markup.add(cmd, gms)
          bot.send_message(message.chat.id, "<i>Возвращаемся</i>", parse_mode='HTML', reply_markup=markup)
