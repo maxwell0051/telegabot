@@ -23,7 +23,7 @@ def start(message):
 
 @bot.message_handler(content_types=['text'])
 def text(message):
-    if message.text == 'Цитаты':
+    if message.text == '📜Цитаты':
 
         markup3 = types.ReplyKeyboardMarkup(resize_keyboard=True)
         item1 = types.KeyboardButton("🐺Волчьи")
@@ -32,7 +32,7 @@ def text(message):
 
         markup3.add(item1, item2, item3)
         bot.send_message(message.chat.id, "Выбери тип цитаты", reply_markup=markup3)
-    elif message.text == 'Игры':
+    elif message.text == '🎮Игры':
         markup2 = types.ReplyKeyboardMarkup(resize_keyboard=True)
         item1 = types.KeyboardButton("🎲Данетка")
         item2 = types.KeyboardButton("🎲Случайно число")
@@ -41,7 +41,7 @@ def text(message):
         markup2.add(item1, item2, item3)
 
         bot.send_message(message.chat.id, '<b>Выбери игру</b>', parse_mode='HTML', reply_markup=markup2)
-    elif message.text == 'Цитаты':
+    elif message.text == '📜Цитаты':
         markup3 = types.ReplyKeyboardMarkup(resize_keyboard=True)
         item1 = types.KeyboardButton("🐺Волчьи")
         item2 = types.KeyboardButton("🏆Цитаты Великих Людей")
@@ -86,7 +86,7 @@ def text1(message):
     bot.send_message(message.chat.id, 'Задай вопрос, а я отвечу <b>Да</b> или <b>Нет</b>', parse_mode='HTML')
  elif message.text == '🎲Случайно число':
     bot.send_message(message.chat.id, str(random.randint(0,100)))
- elif message.text == 'Цитаты':
+ elif message.text == '📜Цитаты':
      markup3 = types.ReplyKeyboardMarkup(resize_keyboard=True)
      item1 = types.KeyboardButton("🐺Волчьи")
      item2 = types.KeyboardButton("🏆Цитаты Великих Людей")
