@@ -42,7 +42,7 @@ def text(message):
         markup2.add(item1, item2, item3)
 
         bot.send_message(message.chat.id, '<b>Выбери игру</b>', parse_mode='HTML', reply_markup=markup2)
-    elif message.text == '📱Связаться с создателем'
+    elif message.text == '📱Связаться с создателем':
         bot.send_message(message.chat.id, 'Если вы хотите связаться с моим создателем, вот он @maxwell0051')
         markup7 = types.ReplyKeyboardMarkup(resize_keyboard=True)
         item1 = types.KeyboardButton("🔙Назад")
