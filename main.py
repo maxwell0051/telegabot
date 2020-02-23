@@ -47,18 +47,8 @@ def text(message):
         markup7 = types.ReplyKeyboardMarkup(resize_keyboard=True)
         item1 = types.KeyboardButton("🔙Назад")
        
-        markup7.add(item1)
-        
-        if message.text == '🔙Назад':
-         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-            cmd = types.KeyboardButton("📜Цитаты")
-            gms = types.KeyboardButton("🎮Игры")
-            crt = types.KeyboardButton("📱Связаться с создателем")  
-            markup.add(cmd, gms,crt)
-            bot.send_message(message.chat.id, "<i>Возвращаемся</i>", parse_mode='HTML', reply_markup=markup)
-        else:
-         bot.send_message(message.chat.id, "Я тебя не понимаю")
-         
+        markup7.add(item1)  
+       
      elif message.text == '📜Цитаты':
         markup3 = types.ReplyKeyboardMarkup(resize_keyboard=True)
         item1 = types.KeyboardButton("🐺Волчьи")
