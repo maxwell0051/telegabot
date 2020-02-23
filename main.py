@@ -73,7 +73,7 @@ def text(message):
 
     else:
         if message.text == '🎲Данетка':
-            bot.send_message(message.chat.id, 'Задай вопрос, а я отвечу <b>Да</b> или <b>Нет</b>', parse_mode='HTML')
+            bot.send_message(message.chat.id, 'Задай вопрос, а я отвечу <b>Да</b> или <b>Нет</b>.\n<i>Примечание - Чтобы бот ответил писать нужно в таком формате "!Вопрос?"</i>', parse_mode='HTML')
         elif message.text == '🎲Случайно число':
             bot.send_message(message.chat.id, str(random.randint(0, 100)))
         elif message.text == '🔙Назад':
@@ -86,13 +86,16 @@ def text(message):
             markup.add(cmd, gms, crt)
             bot.send_message(message.chat.id, "<i>Возвращаемся</i>", parse_mode='HTML', reply_markup=markup)
         else:
-            bot.send_message(message.chat.id, "Я думаю что " + random.choice(strings))
+            if message.text[0] == '!' and message.text[-1] == '?':
+                bot.send_message(message.chat.id, "Я думаю что " + random.choice(strings))
+            else:
+                bot.send_message(message.chat.id, "Я незнаю что сказать")
 
 
 @bot.message_handler(content_types=['text'])
 def text1(message):
     if message.text == '🎲Данетка':
-        bot.send_message(message.chat.id, 'Задай вопрос, а я отвечу <b>Да</b> или <b>Нет</b>', parse_mode='HTML')
+        bot.send_message(message.chat.id, 'Задай вопрос, а я отвечу <b>Да</b> или <b>Нет</b>.\n<i>Примечание - Чтобы бот ответил писать нужно в таком формате "!Вопрос?"</i>', parse_mode='HTML')
     elif message.text == '🎲Случайно число':
         bot.send_message(message.chat.id, str(random.randint(0, 100)))
     elif message.text == '📜Цитаты':
