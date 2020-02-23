@@ -104,7 +104,13 @@ def text1(message):
 
      markup3.add(item1, item2, item3)
      bot.send_message(message.chat.id, "Выбери тип цитаты", reply_markup=markup3)
-
+     
+ elif message.text == '📱Связаться с создателем':
+        bot.send_message(message.chat.id, 'Если вы хотите связаться с моим создателем, вот он @maxwell0051')
+        markup7 = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = types.KeyboardButton("🔙Назад")
+       
+        markup7.add(item1) 
      if message.text == '🐺Волчьи':
        bot.send_message(message.chat.id, random.choice(ctt.wolfs))
      elif message.text == '🏆Цитаты Великих Людей':
