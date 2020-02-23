@@ -15,10 +15,11 @@ def start(message):
  markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
  cmd = types.KeyboardButton("📜Цитаты")
  gms = types.KeyboardButton("🎮Игры")
+ crt = types.KeyboardButton("📱Связаться с создателем")
 
 
 
- markup.add(cmd,gms)
+ markup.add(cmd,gms,crt)
  bot.send_message(message.chat.id, "Я Бот <b>РАНДОМ</b> ", reply_markup=markup, parse_mode='HTML')
 
 @bot.message_handler(content_types=['text'])
@@ -41,7 +42,24 @@ def text(message):
         markup2.add(item1, item2, item3)
 
         bot.send_message(message.chat.id, '<b>Выбери игру</b>', parse_mode='HTML', reply_markup=markup2)
-    elif message.text == '📜Цитаты':
+    elif message.text == '📱Связаться с создателем'
+        bot.send_message(message.chat.id, 'Если вы хотите связаться с моим создателем, вот он @maxwell0051')
+        markup7 = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = types.KeyboardButton("🔙Назад")
+       
+        markup7.add(item1)
+        
+        if message.text == '🔙Назад':
+         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            cmd = types.KeyboardButton("📜Цитаты")
+            gms = types.KeyboardButton("🎮Игры")
+            crt = types.KeyboardButton("📱Связаться с создателем")  
+            markup.add(cmd, gms,crt)
+            bot.send_message(message.chat.id, "<i>Возвращаемся</i>", parse_mode='HTML', reply_markup=markup)
+        else:
+         bot.send_message(message.chat.id, "Я тебя не понимаю")
+         
+     elif message.text == '📜Цитаты':
         markup3 = types.ReplyKeyboardMarkup(resize_keyboard=True)
         item1 = types.KeyboardButton("🐺Волчьи")
         item2 = types.KeyboardButton("🏆Цитаты Великих Людей")
@@ -59,8 +77,9 @@ def text(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             cmd = types.KeyboardButton("📜Цитаты")
             gms = types.KeyboardButton("🎮Игры")
+            crt = types.KeyboardButton("📱Связаться с создателем")
 
-            markup.add(cmd, gms)
+            markup.add(cmd, gms, crt)
             bot.send_message(message.chat.id, "<i>Возвращаемся</i>", parse_mode='HTML', reply_markup=markup)
 
     else:
@@ -73,8 +92,9 @@ def text(message):
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
             cmd = types.KeyboardButton("📜 Цитаты")
             gms = types.KeyboardButton("🎮Игры")
+            crt = types.KeyboardButton("📱Связаться с создателем")
 
-            markup.add(cmd, gms)
+            markup.add(cmd, gms, crt)
             bot.send_message(message.chat.id, "<i>Возвращаемся</i>", parse_mode='HTML',reply_markup=markup)
         else:
             bot.send_message(message.chat.id, "Я думаю что " + random.choice(strings))
@@ -103,8 +123,9 @@ def text1(message):
          markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
          cmd = types.KeyboardButton("📜Цитаты")
          gms = types.KeyboardButton("🎮Игры")
+         crt = types.KeyboardButton("📱Связаться с создателем")
 
-         markup.add(cmd, gms)
+         markup.add(cmd, gms, crt)
          bot.send_message(message.chat.id, "<i>Возвращаемся</i>", parse_mode='HTML', reply_markup=markup)
 
  else:
